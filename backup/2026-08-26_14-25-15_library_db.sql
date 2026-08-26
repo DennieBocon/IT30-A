@@ -24,6 +24,33 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `library_db` /*!40100 DEFAULT CHARACTER
 USE `library_db`;
 
 --
+-- Table structure for table `books`
+--
+
+DROP TABLE IF EXISTS `books`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `books` (
+  `book_id` int(11) NOT NULL AUTO_INCREMENT,
+  `book_title` varchar(50) NOT NULL,
+  `book_author` varchar(50) NOT NULL,
+  `book_category` varchar(50) NOT NULL,
+  `book_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `books`
+--
+
+LOCK TABLES `books` WRITE;
+/*!40000 ALTER TABLE `books` DISABLE KEYS */;
+INSERT INTO `books` VALUES (1,'WHAT ONCE WAS MINE','ELIZABETH J. BRASWELL','FANTASY','2026-08-26 06:20:07'),(2,'WHAT ONCE WAS MINE','ELIZABETH J. BRASWELL','FANTASY','2026-08-26 06:22:15'),(3,'THE HUNGER GAMES','SUZANNE COLLINS','DYSTOPIAN','2026-08-26 06:22:15'),(4,'THE FAULT IN OUR STARS','JOHN GREEN','ROMANCE','2026-08-26 06:22:15');
+/*!40000 ALTER TABLE `books` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `students`
 --
 
@@ -59,4 +86,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-08-22 17:46:38
+-- Dump completed on 2026-08-26 14:25:17
