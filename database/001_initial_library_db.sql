@@ -41,7 +41,7 @@ COLLATE=utf8mb4_general_ci;
 
 
 -- Tables #3 borrow
-CREATE TABLE IF NOT EXISTS borrow (
+CREATE TABLE IF NOT EXISTS borrows (
 
     -- Primary key for borrow table
     borrow_id INT AUTO_INCREMENT PRIMARY KEY,
