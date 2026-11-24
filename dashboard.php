@@ -263,6 +263,13 @@ try {
     $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
-}?>
+}
+// ---------- 1. KPI COUNTS ----------
+
+$studentCount  = $pdo->query("SELECT COUNT(*) FROM students")->fetchColumn();
+$bookCount     = $pdo->query("SELECT COUNT(*) FROM books")->fetchColumn();
+$totalBorrows  = $pdo->query("SELECT COUNT(*) FROM borrow")->fetchColumn();
+$activeBorrows = $pdo->query("SELECT COUNT(*) FROM borrow WHERE borrow_return_date IS NULL")->fetchColumn();
+?>
 </body>
 </html>
